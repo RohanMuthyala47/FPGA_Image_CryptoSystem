@@ -20,12 +20,9 @@ function [X0, Y0, Z0, W0] = generateInitialConditions(SHA256_KeyBlocks, x0, y0, 
         W0 = bitxor(W0, SHA256_KeyBlocks(i));
     end
 
-    X0 = X0/256;
-    Y0 = Y0/256;
-    Z0 = Z0/256;
-    W0 = W0/256;
-    
-    X0 = X0 + x0;
-    Y0 = Y0 + y0;
-    Z0 = Z0 + z0;
-    W0 = W0 + w0;
+    X0 = bitshift(X0, -8) + x0;
+    Y0 = bitshift(Y0, -8) + y0;
+    Z0 = bitshift(Z0, -8) + z0;
+    W0 = bitshift(W0, -8) + w0;
+
+end

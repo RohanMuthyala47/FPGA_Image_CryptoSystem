@@ -2,7 +2,7 @@ function plotChen4D_3DProjections(X, Y, Z, W, num_points)
     % Plot 3D projections of the 4D Chen system
     % Inputs:
     %   X, Y, Z, W - chaotic sequences from Chen4D
-    %   num_points - number of points to plot (optional, default 5000)
+    %   num_points - number of points to plot
     
     if nargin < 5
         num_points = min(5000, length(X));
@@ -58,6 +58,5 @@ function plotChen4D_3DProjections(X, Y, Z, W, num_points)
     view(45, 30);
     axis tight;
     
-    % Add overall title
     sgtitle('4D Hyperchaotic Chen System - 3D Projections', 'FontSize', 16, 'FontWeight', 'bold');
 end
